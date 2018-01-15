@@ -524,6 +524,8 @@ classdef TIFFStack < handle
 %% --- Overloaded subsref
 
       function [varargout] = subsref(oStack, S)
+         w = warning('off', 'MATLAB:imagesci:tiffmexutils:libtiffWarning');
+         warning('off', 'MATLAB:imagesci:tifftagsread:expectedTagDataFormat');
          switch S(1).type
             case '()'
                % - Test for valid subscripts
@@ -710,6 +712,7 @@ classdef TIFFStack < handle
                error('TIFFStack:InvalidReferencing', ...
                      '*** TIFFStack: Only ''()'' referencing is supported by TIFFStacks.');
          end
+         warning(w);
       end
       
 %% --- Getter methods
