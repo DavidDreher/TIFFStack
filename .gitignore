@@ -1,2 +1,6 @@
 private/mapped_tensor_repsum.mexmaci64
 private/tifflib.mexmaci64
+
+*.mexa64
+*.mexw64
+*.mexmaci64
